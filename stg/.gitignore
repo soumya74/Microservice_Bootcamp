@@ -1,0 +1,7 @@
+#ignore files
+*.sum
+
+#ignore DS_Store file
+*.DS_Store
+
+node_modules

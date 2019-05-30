@@ -1,0 +1,15 @@
+{
+  "name": "stg",
+  "version": "1.0.0",
+  "description": "token generator",
+  "main": "main.go",
+  "dependencies": {
+    "node-chartist": "^1.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

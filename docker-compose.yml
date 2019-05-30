@@ -1,0 +1,18 @@
+version: '2.2'
+services:
+  stg:
+    build: ./stg
+    ports:
+      - "10000:10000"
+  hasher:
+    build: ./hasher
+    ports:
+      - "10001:10001"
+  worker:
+    build: ./worker
+    ports:
+      - "8080:8080"
+  webui:
+    build: ./webui
+    ports:
+      - "3000:3000"

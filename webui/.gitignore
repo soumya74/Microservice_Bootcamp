@@ -1,0 +1,8 @@
+#ignore files
+*.sum
+
+#ignore DS_Store file
+*.DS_Store
+
+bower_components
+node_modules

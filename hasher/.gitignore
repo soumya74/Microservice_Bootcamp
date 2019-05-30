@@ -1,0 +1,5 @@
+#ignore .sum files
+*.sum
+
+#ignore DS_Store file
+*.DS_Store

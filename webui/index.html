@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>My first Chartist Tests</title>
+     <link rel="stylesheet"
+           href="bower_components/chartist/dist/chartist.min.css">
+   </head>
+   <script src = "/socket.io/socket.io.js"></script>
+   <script>
+      //var socket = io();
+      //socket.on('message',function(data){document.write(data)});
+      //socket.on('testCustomEvent', function(data){document.write(data.description)});
+   </script>
+   <script src="bower_components/chartist/dist/chartist.min.js"></script>
+   <body>
+     <div class="ct-chart" id="chart"></div>
+
+     <script type="text/javascript" src="https://rawgit.com/gionkunz/chartist-js/master/dist/chartist.js"></script>
+     <script>
+       var socket = io();
+       let filledArray = ['test1', 'test2', 'test3', 'test4'];
+       filledArray[0] = 12//data.data1;
+       filledArray[1] = 11//data.data2;
+       filledArray[2] = 5//data.data3;
+       filledArray[3] = 2//data.data4;
+       var test = 0;
+       var total = 0;
+
+       socket.on('redisPublishEvent', function(data){
+         //filledArray[test%4] = parseInt(data.description) || 0;//data.data4;
+         filledArray[2] = filledArray[3]
+         filledArray[1] = filledArray[2]
+         filledArray[0] = filledArray[1];
+         filledArray[3] = parseInt(data.description) + total;
+         total = total + parseInt(data.description);
+         new Chartist.Line('.ct-chart', {
+           labels: [1, 2, 3, 4],
+           series: [filledArray]
+         }, {
+           low: 0,
+           fullWidth: true,
+           showArea: true
+         });
+         test++;
+       })
+     </script>
+   </body>
+</html>
